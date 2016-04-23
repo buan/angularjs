@@ -1,0 +1,22 @@
+<html>
+<body>
+<head>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+<body ng-app="myapp">
+
+<div ng-controller="myController">
+Select View<br><select ng-model="showtable">
+<option value="showtable.html">Show Table</option>
+<option value="showlist.html">Show List</option>
+</select>
+<br>
+<br>
+<div ng-include="showtable">
+</div>
+</div>
+
+</body>
+</head>
+</body>
+</html>

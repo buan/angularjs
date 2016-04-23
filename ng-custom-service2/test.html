@@ -1,0 +1,23 @@
+<html>
+<body>
+<head>
+<script src="angular.min.js"></script>
+<script src="factory.js"></script>
+<script src="app.js"></script>
+<body ng-app="myApp">
+
+<div ng-controller="myController">
+<table border="1">
+
+<tr><td>Enter original string</td>
+<td><input type="text" ng-model="input"></td></tr>
+<tr><td>Changed string</td>
+<td><input type="text" ng-model="output"></td></tr>
+<tr ><td colspan="2" align="center"><input type="button" value="Change" ng-click="changeString(input)"></td></tr>
+</div>
+</div>
+
+</body>
+</head>
+</body>
+</html>

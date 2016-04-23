@@ -1,0 +1,33 @@
+<html ng-app="app">
+	<head>
+	 <script src="angular.min.js"></script>
+	 <script src="angular-route.min.js"></script>
+	  <script src="app.js"></script>
+	 <link rel="stylesheet" href="style.css">
+	</head>
+		<body>
+		<div id="main">
+			<div id="header">
+			<b>Website header</b>
+			</div>
+			
+			<div id="links">
+			<!-- these are called partial templates(#/name).Thia tells the index.html page not to move away from index page to the page in href but to inject the page name in its url -->
+			<ul>
+			<li><a href="#/home">Home</a></li>
+			<li><a href="#/courses">Courses</a></li>
+			<li><a href="#/students">students</a></li>
+			</ul>
+			</div>
+			
+			<div id="content">
+			<ng-view></ng-view>
+		
+			</div>
+			
+			<div id="footer">
+			Website Footer
+			</div>
+		</div>
+		</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<body>
+<head>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+<body ng-app="myapp">
+
+<div ng-controller="myController">
+<table border="1">
+<tr>
+<td>Brand Id</td>
+<td>Brand Title</td>
+</tr>
+
+<tr ng-repeat="x in names">
+<td>{{x.brand_id}}</td>
+<td>{{x.brand_title}}</td>
+</tr>
+
+</table>
+</div>
+</div>
+
+</body>
+</head>
+</body>
+</html>

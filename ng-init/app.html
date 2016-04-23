@@ -1,0 +1,35 @@
+<html>
+<body>
+<head>
+<script src="../angular.min.js"></script>
+
+<body ng-app>
+
+<div ng-init="emp=[
+	{name:'Suman Dutta',gender:'male', salary:'20000'},
+	{name:'Amit Sinha',gender:'female',salary:'35000'},
+	{name:'Subhransu Sekhar',gender:'male',salary:'25000'},
+	{name:'Soumya Banerjee',gender:'male',salary:'19000'}
+	]">
+
+<table border='1'>
+
+<tr>
+<td>Serial</td>
+<td>Name</td>
+<td>Gender</td>
+<td>Salary(number)</td>
+</tr>
+
+<tr ng-repeat="emp1 in emp">
+<td>{{$index+1}}</td>
+<td>{{emp1.name}}</td>
+<td>{{emp1.gender|uppercase}}</td>
+<td>{{emp1.salary|number:"2"}}</td>
+</table>
+</div>
+
+</body>
+</head>
+</body>
+</html>

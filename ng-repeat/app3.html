@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="../angular.min.js"></script>
+<script src="app3.js"></script>
+</head>
+
+<body ng-app="myModule">
+
+<div ng-controller="myController">
+<table border='1'>
+
+<tr>
+<td>First Name</td>
+<td>Last Name</td>
+<td>Job</td>
+</tr>
+
+<tr ng-repeat="employee in emp">
+<td>{{employee.fname}}</td>
+<td>{{employee.lname}}</td>
+<td>{{employee.job}}</td>
+</tr>
+
+</table>
+
+
+</div>
+</body>

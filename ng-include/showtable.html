@@ -1,0 +1,18 @@
+<table border='1'>
+
+<tr>
+<td>Serial</td>
+<td>Name</td>
+<td>Gender</td>
+<td>Date Of Birth</td>
+<td>Salary(number)</td>
+
+</tr>
+
+<tr ng-repeat="emp1 in emp">
+<td>{{$index+1}}</td>
+<td>{{emp1.name}}</td>
+<td>{{emp1.dob|date:"yyyy-MM-dd"}}</td>
+<td>{{emp1.gender|uppercase}}</td>
+<td ng-hide="hidesal">{{emp1.salary|number:"2"}}</td>
+</table>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="angular.min.js"></script>
+<script src="nested.js"></script>
+</head>
+
+<body ng-app="myModule">
+
+<div ng-controller="myController">
+<table border='1'>
+<tr>
+<td>Name</td>
+<td>likes</td>
+<td>dislikes</td>
+<td>likes/dislikes</td>
+</tr>
+
+
+<tr ng-repeat="tech1 in tech">
+<td>{{tech1.name}}</td>
+<td>{{tech1.likes}}</td>
+<td>{{tech1.dislikes}}</td>
+<td><input type="button" value="likes" ng-click="likes(tech1)">
+<input type="button" value="dislikes" ng-click="dislikes(tech1)"></td>
+</tr>
+</table>
+
+</div>
+</body>
