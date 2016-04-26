@@ -33,9 +33,11 @@ var myApp=angular.module("app",["ngRoute"])
 .controller("studentsController",function($scope,$http)
 {
   $http.get("customers.php").then(function (response) {
-      $scope.students = response.data;
+      	console.log(response.data);
+	  $scope.students = response.data;
   })
-.controller("studentsdetailsController",function($scope,$http,$routeParams)
+})
+  .controller("studentsdetailsController",function($scope,$http,$routeParams)
 {
 $http({
 	url:"customerdetails.php",
@@ -43,6 +45,7 @@ $http({
 	method:"get"
   })
 .then(function (response) {
+	console.log(response.data);
       $scope.students = response.data;
 })
 
