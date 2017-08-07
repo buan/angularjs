@@ -1,0 +1,74 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+</script>
+<script>
+
+var app = angular.module('myApp', []);
+
+app.controller('MyCtrl', ['$scope','$http', function ($scope,$http) {
+$scope.inputs = [];
+
+$scope.addInput = function(){
+    $scope.inputs.push({field:'', value:'',option:''});
+	
+}
+$scope.finaloutput = function(){
+    var res_cnt=$scope.inputs.length;
+	var final_res='';
+	for(var i=0;i<res_cnt;i++)
+	{
+	final_res +='{"name":"'+$scope.inputs[i].field+'","value":"'+$scope.inputs[i].value+'","option":"'+$scope.inputs[i].option+'"},';
+	}
+	$scope.finalvalue='['+final_res.slice(0,-1)+']';
+   finalvalue='['+final_res.slice(0,-1)+']';
+}
+$scope.removeInput = function(index){
+    $scope.inputs.splice(index,1);
+}
+
+$scope.insert = function(){
+   
+   $http({
+        method : "POST",
+        url : "insert.php",
+        data:$scope.finalvalue
+    }).then(function mySuccess(response) {
+        alert(response.data);
+    }); 
+}
+
+    
+    
+    
+}]);
+   
+    
+</script>
+
+
+
+<div ng-app="myApp" ng-controller="MyCtrl">
+  [
+    <span ng-repeat="input in inputs">
+   {
+      name:'{{input.field}}',
+      value:'{{input.value}}',
+      option:'{{input.option}}'
+    },
+    </span>
+    ]
+	<input type='text' ng-model="finalvalue"/>
+    <div ng-repeat="input in inputs">
+        Name<input type="text" ng-model="input.field" /><br>
+        Value<input type="text" ng-model="input.value" /><br>
+        Country<select ng-model="input.option"><br>
+            <option>India</option>
+            <option>UK</option>
+            <option>Australia</option>
+        </select><br>
+        
+    </div>
+    <button ng-click="addInput()">add input</button>
+    <button ng-click="removeInput($index)">Remove</button>
+	<button ng-click="finaloutput()">Final</button>
+    <button ng-click="insert()">Insert</button>
+</div>
